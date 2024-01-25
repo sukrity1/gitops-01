@@ -7,7 +7,7 @@ function App() {
       <header className='App-header'>
         <img src={logo} className='App-logo' alt='logo' />
         <div style={{ fontSize: 30 }}>
-          Version <span style={{ color: 'red' }}>HeySukrity</span>
+          Version <span style={{ color: 'red' }}>HeySukrityyy</span>
         </div>
       </header>
     </div>
