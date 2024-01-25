@@ -57,12 +57,12 @@ jobs:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Login to Github Packages
-        uses: docker/login-action@v2
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.G_TOKEN }}
+      # - name: Login to Github Packages
+      #   uses: docker/login-action@v2
+      #   with:
+      #     registry: ghcr.io
+      #     username: ${{ github.actor }}
+      #     password: ${{ secrets.G_TOKEN }}
 
       - name: Build image and push to Docker Hub and GitHub Container Registry
         uses: docker/build-push-action@v2
@@ -72,7 +72,7 @@ jobs:
           # Note: tags has to be all lower-case
           tags: |
             sukrity/gitops01:${{ github.sha }} 
-            ghcr.io/sukrity/gitops01:${{ github.sha }}
+            # ghcr.io/sukrity/gitops01:${{ github.sha }}
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/master' }}
 
