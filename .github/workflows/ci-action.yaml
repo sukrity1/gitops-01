@@ -71,8 +71,8 @@ jobs:
           context: ./
           # Note: tags has to be all lower-case
           tags: |
-            imrishav/gitops01:${{ github.sha }} 
-            ghcr.io/imrishav/gitops01:${{ github.sha }}
+            sukrity/gitops01:${{ github.sha }} 
+            ghcr.io/sukrity/gitops01:${{ github.sha }}
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/master' }}
 
@@ -85,13 +85,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: imrishav/gitops-infra
+          repository: sukrity1/gitops-infra
           ref: 'master'
           token: ${{ secrets.G_TOKEN }}
       - name: setup git config
         run: |
-          git config --global user.email "rishav@live.co.uk"
-          git config --global user.name "imrishav"
+          git config --global user.email "sukrity@rocketmail.com"
+          git config --global user.name "sukrity1"
           echo ${{ github.sha }}
           sed -i "s#${{ github.actor }}.*#${{ github.actor }}/gitops01:${{ github.sha }}#g" deployment.yaml
           git add -A
